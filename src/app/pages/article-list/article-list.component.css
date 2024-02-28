@@ -1,0 +1,24 @@
+.article-container {
+    display: flex; /* Use flexbox to create a two-column layout */
+    margin-left: 15% ;
+    margin-right: 10%;
+    margin-bottom: 20px; /* Add some space between each article */
+  }
+  
+  .image-container {
+    flex: 0 0 30%; /* Set the width of the image container */
+    margin-right: 20px; /* Add some space between the image and description */
+  }
+  
+  .image-container img {
+    max-width: 100%; /* Ensure the image doesn't exceed its container */
+  }
+  
+  .description-container {
+    flex: 1; /* Allow the description container to expand to fill available space */
+  }
+  
+  .description-container h2 {
+    margin-top: 0; /* Remove default margin for the heading */
+  }
+  
