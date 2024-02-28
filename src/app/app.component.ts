@@ -1,10 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'news-app';
+export class AppComponent implements OnInit {
+  categorySelected: boolean = false;
+
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+
+  ngOnInit() {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        const hasCategoryParam = this.activatedRoute.firstChild && this.activatedRoute.firstChild.snapshot.paramMap.has('category');
+        this.categorySelected = hasCategoryParam !== null ? hasCategoryParam : false;
+      }
+    });
+  }
 }

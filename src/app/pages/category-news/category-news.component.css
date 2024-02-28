@@ -1,0 +1,32 @@
+.article-details-container{
+    margin-left: 200px;
+}
+.description-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px; /* Add margin to separate articles */
+  }
+  
+  .article-details {
+    display: flex;
+  }
+  
+  .image-container {
+    flex: 0 0 auto; /* Keep the width of the image fixed */
+    margin-right: 10px; /* Add spacing between image and text */
+  }
+  
+  .text-container {
+    flex: 1; /* Allow text to take remaining space */
+  }
+  .image-container img {
+    width: 400px; /* Set the desired width */
+    height: auto; /* Maintain aspect ratio */
+  }  
+  
+
+.no-articles {
+    padding: 20px;
+    text-align: center;
+    color: #666;
+}
